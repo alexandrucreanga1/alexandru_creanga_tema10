@@ -19,6 +19,7 @@ public class Main {
 
     private static void readAthletesFromCSV () {
         Path fileIn = new File("resources/athletesIN.csv").toPath();
+        System.out.println(fileIn.toAbsolutePath());
         try (BufferedReader reader = Files.newBufferedReader(fileIn)) {
             String line = null;
             while ((line = reader.readLine()) != null) {
@@ -45,16 +46,6 @@ public class Main {
         String thirdShootingRange = tokens[6];
         return new Athlete(athleteNumber,athleteName,countryCode,skiTimeResultMinutesSeconds,firstShootingRage,secondShootingRage,thirdShootingRange);
     }
-
-    // 1,Umar Jorgson,SK,30:27,xxxox,xxxxx,xxoxo
-//    int athleteNumber;
-//    String athleteName;
-//    String countryCode;
-//    String skiTimeResultMinutesSeconds;
-//    String firstShootingRage;
-//    String secondShootingRage;
-//    String thirdShootingRange;
-
 
 
 }
