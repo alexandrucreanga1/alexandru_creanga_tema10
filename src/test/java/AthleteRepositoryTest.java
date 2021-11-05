@@ -59,7 +59,6 @@ public class AthleteRepositoryTest extends TestCase {
         //when (aici e metoda propriu zisa)
         Athlete result = athleteRepository.getAthletesFromCsvLine(inputLine);
 
-        //then
 
     }
 

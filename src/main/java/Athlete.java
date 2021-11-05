@@ -25,10 +25,19 @@ public class Athlete {
                 calculatePenaltyInSeconds(firstShootingRage, secondShootingRage, thirdShootingRange);
     }
 
+    public Athlete() {
+
+    }
+
 
     public int calculatePenaltyInSeconds(String firstShooting, String secondShooting,
-                                           String thirdShooting) {
-
+                                             String thirdShooting) {
+        if((firstShooting.length() != 5) ||(secondShooting.length() != 5) || (thirdShooting.length() != 5)) {
+            throw new IllegalArgumentException("Number of target points are not equal to 5!");
+        }
+        if((!firstShooting.matches("[xo]+")) || (!secondShooting.matches("[xo]+")) || (!thirdShooting.matches("[xo]+"))) {
+            throw new IllegalArgumentException("Wrong characters are used for marking points!");
+        }
         return (int) ((firstShooting.chars().filter(ch -> (ch == 'o')).count() +
                 secondShooting.chars().filter(ch -> (ch == 'o')).count() +
                 thirdShooting.chars().filter(ch -> (ch == 'o')).count())) * 10;
@@ -38,6 +47,9 @@ public class Athlete {
         String[] tokens = actualTiming.split(":");
         if (tokens.length != 2) {
             throw new IllegalArgumentException();
+        }
+        if(Integer.parseInt(tokens[1]) >60) {
+            throw new IllegalArgumentException("Number set for Seconds is Higher than 60!. Please review!");
         }
       //  int minutesConvertToSeconds = (Integer.parseInt(tokens[0].trim()) * 60) + (Integer.parseInt(tokens[1].trim()));
        // System.out.println("Minutes to seconds: " + (Integer.parseInt(tokens[0].trim()) * 60) + " Seconds: " + (Integer.parseInt(tokens[1].trim())));

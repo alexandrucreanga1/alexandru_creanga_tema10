@@ -1,12 +1,5 @@
 
 
-// Intrebari:
-// 1. Cum fac legatura intre obiecte si lista ? (adica am metodele, dar le pot aplica doar la nivel unic index.
-//    cum fac sa le aplic la nivel de lista ?
-
-// 2. Daca mut metodele in clasa Athlete, cum le fac chemare in main ? lista este creata din CSV.
-
-
 public class Main {
 
 
